@@ -1,0 +1,142 @@
+\doxysection{Dokumentacja pliku P6/main.cpp}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{P6/main.cpp@{P6/main.cpp}}
+
+
+G³ówny plik programu obs³uguj¹cego analizê danych z pliku CSV.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Row\+Data.\+h"{}}\newline
+{\ttfamily \#include "{}Log\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}Tree\+Data.\+h"{}}\newline
+{\ttfamily \#include "{}Line\+Validation.\+h"{}}\newline
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a59c2926dd9b0968badf463aaf4f91422}{display\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Wyœwietla menu u¿ytkownika. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Funkcja g³ówna programu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+G³ówny plik programu obs³uguj¹cego analizê danych z pliku CSV. 
+
+Program umo¿liwia wczytywanie danych z pliku CSV, ich analizê, przetwarzanie oraz zapisywanie w pliku binarnym. Oferuje funkcje takie jak obliczanie sum i œrednich, porównywanie danych oraz wyszukiwanie z tolerancj¹. 
+
+Definicja w pliku \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{main_8cpp_a59c2926dd9b0968badf463aaf4f91422}\index{main.cpp@{main.cpp}!displayMenu@{displayMenu}}
+\index{displayMenu@{displayMenu}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{displayMenu()}{displayMenu()}}
+{\footnotesize\ttfamily \label{main_8cpp_a59c2926dd9b0968badf463aaf4f91422} 
+void display\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Wyœwietla menu u¿ytkownika. 
+
+Funkcja drukuje dostêpne opcje programu na standardowe wyjœcie. 
+
+Definicja w linii \mbox{\hyperlink{main_8cpp_source_l00021}{21}} pliku \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Funkcja g³ówna programu. 
+
+G³ówna pêtla programu, która obs³uguje menu i poszczególne funkcjonalnoœci. \begin{DoxyReturn}{Zwraca}
+Zwraca 0 w przypadku pomyœlnego zakoñczenia programu. 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Struktura drzewa do przechowywania danych.
+
+\texorpdfstring{$<$}{<} Zmienna przechowuj¹ca dane w postaci wierszy.
+
+\texorpdfstring{$<$}{<} Aktualnie przetwarzany wiersz danych.
+
+\texorpdfstring{$<$}{<} Strumieñ do odczytu pliku CSV.
+
+\texorpdfstring{$<$}{<} Daty u¿ywane w analizie danych.
+
+\texorpdfstring{$<$}{<} Wyniki obliczeñ sum.
+
+\texorpdfstring{$<$}{<} Wyniki porównañ.
+
+\texorpdfstring{$<$}{<} Parametry do wyszukiwania z tolerancj¹.
+
+\texorpdfstring{$<$}{<} Zmienna do przechowywania wyników wyszukiwania z tolerancj¹.
+
+\texorpdfstring{$<$}{<} Wyœwietlanie menu u¿ytkownika.
+
+\texorpdfstring{$<$}{<} Ignoruj znak nowej linii pozostawiony w buforze.
+
+Wczytanie danych z pliku CSV.
+
+Dane s¹ wczytywane do struktury drzewa i wektora, a niepoprawne wiersze s¹ logowane.
+
+\texorpdfstring{$<$}{<} Walidacja wiersza danych.
+
+\texorpdfstring{$<$}{<} Tworzenie obiektu \doxylink{class_row_data}{Row\+Data} z wiersza CSV.
+
+\texorpdfstring{$<$}{<} Dodanie wiersza do wektora danych.
+
+\texorpdfstring{$<$}{<} Dodanie wiersza do struktury drzewa.
+
+Wyœwietlenie struktury drzewa.
+
+\texorpdfstring{$<$}{<} Wyœwietlanie struktury drzewa danych.
+
+Pobranie danych w okreœlonym przedziale czasowym.
+
+\texorpdfstring{$<$}{<} Pobranie danych z drzewa w podanym zakresie dat.
+
+\texorpdfstring{$<$}{<} Iteracja po danych w przedziale czasowym.
+
+\texorpdfstring{$<$}{<} Wyœwietlanie danych.
+
+Obliczenie sum w okreœlonym przedziale czasowym.
+
+\texorpdfstring{$<$}{<} Obliczanie sum dla danych z przedzia³u czasowego.
+
+Obliczenie œrednich w okreœlonym przedziale czasowym.
+
+\texorpdfstring{$<$}{<} Obliczanie œrednich dla danych z przedzia³u czasowego.
+
+Porównanie danych miêdzy dwoma zakresami czasowymi.
+
+\texorpdfstring{$<$}{<} Porównanie danych miêdzy dwoma zakresami czasowymi.
+
+Wyszukiwanie danych w okreœlonym przedziale czasowym z tolerancj¹.
+
+\texorpdfstring{$<$}{<} Wyszukiwanie rekordów z tolerancj¹ w podanym zakresie dat.
+
+\texorpdfstring{$<$}{<} Iteracja po wynikach wyszukiwania.
+
+\texorpdfstring{$<$}{<} Wyœwietlanie wyników wyszukiwania.
+
+Zapisanie danych do pliku binarnego.
+
+\texorpdfstring{$<$}{<} Zapisanie wiersza danych do pliku binarnego.
+
+Wczytanie danych z pliku binarnego.
+
+\texorpdfstring{$<$}{<} Wczytanie wiersza danych z pliku binarnego.
+
+\texorpdfstring{$<$}{<} Dodanie wiersza danych do struktury drzewa.
+
+Wyjœcie z programu.
+
+Definicja w linii \mbox{\hyperlink{main_8cpp_source_l00039}{39}} pliku \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

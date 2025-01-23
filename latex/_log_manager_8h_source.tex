@@ -1,0 +1,35 @@
+\doxysection{Log\+Manager.\+h}
+\hypertarget{_log_manager_8h_source}{}\label{_log_manager_8h_source}\index{P6/LogManager.h@{P6/LogManager.h}}
+\mbox{\hyperlink{_log_manager_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ LOGMANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ LOGMANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00012}\mbox{\hyperlink{class_log_manager}{00012}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_log_manager}{LogManager}}\ \{}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00013}00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_log_manager_ab4cf52e57ccd18e6354b712cfec472e8}{LogManager}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{class_log_manager_a7e6291dd344ad467c049c39f65f6897c}{\string~LogManager}}();}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_log_manager_a186d560cd1b566d693640683c944ae2d}{log}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00029}00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00030}\mbox{\hyperlink{class_log_manager_a9a5f265bb2d69cd2b73eda10a09ec1f2}{00030}}\ \ \ \ \ std::ofstream\ \mbox{\hyperlink{class_log_manager_a9a5f265bb2d69cd2b73eda10a09ec1f2}{logFile}};\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00031}00031\ \};}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00036}00036\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_log_manager}{LogManager}}\ \mbox{\hyperlink{_log_manager_8h_a3d8ceb0f7fb26c89ca1e0723b7b99bba}{globalLogger}};}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00042}00042\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_log_manager}{LogManager}}\ \mbox{\hyperlink{_log_manager_8h_a07c69717dac1a757af12c19fdfc9d561}{errorLogger}};}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00048}00048\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_log_manager_8h_af5809a5be0fca80df8a8cc6a56f7f434}{errorLogCount}};}
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_log_manager_8h_source_l00050}00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOGMANAGER\_H}}
+
+\end{DoxyCode}

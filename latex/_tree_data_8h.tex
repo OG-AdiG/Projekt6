@@ -1,0 +1,33 @@
+\doxysection{Dokumentacja pliku P6/\+Tree\+Data.h}
+\hypertarget{_tree_data_8h}{}\label{_tree_data_8h}\index{P6/TreeData.h@{P6/TreeData.h}}
+
+
+Deklaracja klasy \doxylink{class_tree_data}{Tree\+Data} do przechowywania i analizy danych w strukturze drzewa.  
+
+
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Row\+Data.\+h"{}}\newline
+\doxysubsubsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_tree_data}{Tree\+Data}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Za³¹czenie pliku nag³ówkowego zawieraj¹cego klasê \doxylink{class_row_data}{Row\+Data}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_tree_data_1_1_quarter_node}{Tree\+Data\+::\+Quarter\+Node}}
+\begin{DoxyCompactList}\small\item\em Reprezentuje dane z podzia³em na kwarta³y dnia. Struktura ta zawiera informacje o godzinie, minucie oraz dane przypisane do danego kwarta³u. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_tree_data_1_1_day_node}{Tree\+Data\+::\+Day\+Node}}
+\begin{DoxyCompactList}\small\item\em Reprezentuje dane dzienne. Struktura ta zawiera informacje o danym dniu oraz mapê kwartalnych danych w tym dniu. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_tree_data_1_1_month_node}{Tree\+Data\+::\+Month\+Node}}
+\begin{DoxyCompactList}\small\item\em Reprezentuje dane miesiêczne. Struktura ta zawiera informacje o danym miesi¹cu oraz mapê dziennych danych w tym miesi¹cu. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_tree_data_1_1_year_node}{Tree\+Data\+::\+Year\+Node}}
+\begin{DoxyCompactList}\small\item\em Reprezentuje dane roczne. Struktura ta zawiera informacje o roku oraz mapê miesiêcznych danych w tym roku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+Deklaracja klasy \doxylink{class_tree_data}{Tree\+Data} do przechowywania i analizy danych w strukturze drzewa. 
+
+
+
+Definicja w pliku \mbox{\hyperlink{_tree_data_8h_source}{Tree\+Data.\+h}}.
+

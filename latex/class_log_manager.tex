@@ -1,0 +1,140 @@
+\doxysection{Dokumentacja klasy Log\+Manager}
+\hypertarget{class_log_manager}{}\label{class_log_manager}\index{LogManager@{LogManager}}
+
+
+Klasa obs³uguj¹ca logowanie komunikatów do plików tekstowych.  
+
+
+
+
+{\ttfamily \#include $<$Log\+Manager.\+h$>$}
+
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_log_manager_ab4cf52e57ccd18e6354b712cfec472e8}{Log\+Manager}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_log_manager}{Log\+Manager}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_log_manager_a7e6291dd344ad467c049c39f65f6897c}{\texorpdfstring{$\sim$}{\string~}\+Log\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{class_log_manager}{Log\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_log_manager_a186d560cd1b566d693640683c944ae2d}{log}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Zapisuje komunikat do pliku logu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ofstream \mbox{\hyperlink{class_log_manager_a9a5f265bb2d69cd2b73eda10a09ec1f2}{log\+File}}
+\begin{DoxyCompactList}\small\item\em Strumieñ pliku logu, u¿ywany do zapisywania komunikatów. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+Klasa obs³uguj¹ca logowanie komunikatów do plików tekstowych. 
+
+Definicja w linii \mbox{\hyperlink{_log_manager_8h_source_l00012}{12}} pliku \mbox{\hyperlink{_log_manager_8h_source}{Log\+Manager.\+h}}.
+
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_log_manager_ab4cf52e57ccd18e6354b712cfec472e8}\index{LogManager@{LogManager}!LogManager@{LogManager}}
+\index{LogManager@{LogManager}!LogManager@{LogManager}}
+\doxysubsubsection{\texorpdfstring{LogManager()}{LogManager()}}
+{\footnotesize\ttfamily \label{class_log_manager_ab4cf52e57ccd18e6354b712cfec472e8} 
+Log\+Manager\+::\+Log\+Manager (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \doxylink{class_log_manager}{Log\+Manager}. 
+
+Tworzy plik logu z unikaln¹ nazw¹ opart¹ na aktualnej dacie i godzinie. 
+\begin{DoxyParams}{Parametry}
+{\em filename} & Nazwa podstawowa pliku logu, która bêdzie u¿yta do stworzenia pe³nej nazwy pliku. Konstruktor inicjalizuje strumieñ wyjœciowy do zapisywania komunikatów logu do pliku.\\
+\hline
+\end{DoxyParams}
+Tworzy plik logu z unikaln¹ nazw¹ opart¹ na aktualnej dacie i godzinie. 
+\begin{DoxyParams}{Parametry}
+{\em filename} & Nazwa podstawowa pliku logu, która bêdzie u¿yta do stworzenia pe³nej nazwy pliku. Konstruktor generuje nazwê pliku logu opart¹ na dacie i godzinie, a nastêpnie otwiera ten plik do zapisu. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Pobranie bie¿¹cego czasu.
+
+\texorpdfstring{$<$}{<} Struktura przechowuj¹ca czas w formacie lokalnym.
+
+\texorpdfstring{$<$}{<} Konwersja czasu na lokalny format.
+
+\texorpdfstring{$<$}{<} Strumieñ do tworzenia ³añcucha tekstowego z nazw¹ pliku.
+
+\texorpdfstring{$<$}{<} Budowanie pe³nej nazwy pliku.
+
+\texorpdfstring{$<$}{<} Nazwa pliku z dat¹ i godzin¹.
+
+\texorpdfstring{$<$}{<} Otwieranie pliku logu w trybie do zapisu.
+
+\texorpdfstring{$<$}{<} Rzucenie wyj¹tku, jeœli nie uda³o siê otworzyæ pliku.
+
+Definicja w linii \mbox{\hyperlink{_log_manager_8cpp_source_l00030}{30}} pliku \mbox{\hyperlink{_log_manager_8cpp_source}{Log\+Manager.\+cpp}}.
+
+\Hypertarget{class_log_manager_a7e6291dd344ad467c049c39f65f6897c}\index{LogManager@{LogManager}!````~LogManager@{\texorpdfstring{$\sim$}{\string~}LogManager}}
+\index{````~LogManager@{\texorpdfstring{$\sim$}{\string~}LogManager}!LogManager@{LogManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LogManager()}{\string~LogManager()}}
+{\footnotesize\ttfamily \label{class_log_manager_a7e6291dd344ad467c049c39f65f6897c} 
+Log\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Log\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \doxylink{class_log_manager}{Log\+Manager}. 
+
+Zamyka otwarty plik logu, zapewniaj¹c, ¿e wszystkie dane zosta³y zapisane. \texorpdfstring{$<$}{<} Zamkniêcie strumienia pliku logu.
+
+Definicja w linii \mbox{\hyperlink{_log_manager_8cpp_source_l00051}{51}} pliku \mbox{\hyperlink{_log_manager_8cpp_source}{Log\+Manager.\+cpp}}.
+
+
+
+\doxysubsection{Dokumentacja funkcji skÅ‚adowych}
+\Hypertarget{class_log_manager_a186d560cd1b566d693640683c944ae2d}\index{LogManager@{LogManager}!log@{log}}
+\index{log@{log}!LogManager@{LogManager}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily \label{class_log_manager_a186d560cd1b566d693640683c944ae2d} 
+void Log\+Manager\+::log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Zapisuje komunikat do pliku logu. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em message} & Komunikat do zapisania w pliku logu. Funkcja ta zapisuje podany komunikat do otwartego pliku logu.\\
+\hline
+{\em message} & Komunikat do zapisania w pliku logu. Funkcja zapisuje podany komunikat do pliku logu wraz z bie¿¹c¹ dat¹ i godzin¹. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Pobranie bie¿¹cego czasu.
+
+\texorpdfstring{$<$}{<} Struktura przechowuj¹ca czas w formacie lokalnym.
+
+\texorpdfstring{$<$}{<} Konwersja czasu na lokalny format.
+
+\texorpdfstring{$<$}{<} Zapisanie komunikatu z dat¹ i godzin¹.
+
+Definicja w linii \mbox{\hyperlink{_log_manager_8cpp_source_l00060}{60}} pliku \mbox{\hyperlink{_log_manager_8cpp_source}{Log\+Manager.\+cpp}}.
+
+
+
+\doxysubsection{Dokumentacja atrybutÃ³w skÅ‚adowych}
+\Hypertarget{class_log_manager_a9a5f265bb2d69cd2b73eda10a09ec1f2}\index{LogManager@{LogManager}!logFile@{logFile}}
+\index{logFile@{logFile}!LogManager@{LogManager}}
+\doxysubsubsection{\texorpdfstring{logFile}{logFile}}
+{\footnotesize\ttfamily \label{class_log_manager_a9a5f265bb2d69cd2b73eda10a09ec1f2} 
+std\+::ofstream Log\+Manager\+::log\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Strumieñ pliku logu, u¿ywany do zapisywania komunikatów. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_log_manager_8h_source_l00030}{30}} pliku \mbox{\hyperlink{_log_manager_8h_source}{Log\+Manager.\+h}}.
+
+
+
+Dokumentacja dla tej klasy zostaÅ‚a wygenerowana z plikÃ³w\+:\begin{DoxyCompactItemize}
+\item 
+P6/\mbox{\hyperlink{_log_manager_8h}{Log\+Manager.\+h}}\item 
+P6/\mbox{\hyperlink{_log_manager_8cpp}{Log\+Manager.\+cpp}}\end{DoxyCompactItemize}

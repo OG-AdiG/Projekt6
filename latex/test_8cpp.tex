@@ -1,0 +1,156 @@
+\doxysection{Dokumentacja pliku Google\+Test/test.cpp}
+\hypertarget{test_8cpp}{}\label{test_8cpp}\index{GoogleTest/test.cpp@{GoogleTest/test.cpp}}
+
+
+Zawiera zestaw testów jednostkowych dla modu³ów \doxylink{class_row_data}{Row\+Data}, \doxylink{class_tree_data}{Tree\+Data}, Logger i Line\+Validation.  
+
+
+{\ttfamily \#include "{}pch.\+h"{}}\newline
+{\ttfamily \#include "{}../\+P6/\+Row\+Data.\+h"{}}\newline
+{\ttfamily \#include "{}../\+P6/\+Row\+Data.\+cpp"{}}\newline
+{\ttfamily \#include "{}../\+P6/\+Tree\+Data.\+h"{}}\newline
+{\ttfamily \#include "{}../\+P6/\+Tree\+Data.\+cpp"{}}\newline
+{\ttfamily \#include "{}../\+P6/\+Log\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../\+P6/\+Log\+Manager.\+cpp"{}}\newline
+{\ttfamily \#include "{}../\+P6/\+Line\+Validation.\+h"{}}\newline
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{test_8cpp_a6839138c69cddc05afde06efce5ea07e}{TEST}} (Row\+Data\+Test, Constructor\+From\+String)
+\begin{DoxyCompactList}\small\item\em Testuje konstruktor klasy \doxylink{class_row_data}{Row\+Data}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_a1879fbc117d0d01dfa6fbc52ccd40371}{TEST}} (Row\+Data\+Test, Serialization)
+\begin{DoxyCompactList}\small\item\em Testuje serializacjê i deserializacjê klasy \doxylink{class_row_data}{Row\+Data}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_a0a8d6a7ea2084c7e002afaf78bcabd47}{TEST}} (Line\+Validation\+Test, Empty\+Line)
+\begin{DoxyCompactList}\small\item\em Testuje funkcjê waliduj¹c¹ puste linie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_a43da72f29fc4dd6f872f02293bf40e49}{TEST}} (Line\+Validation\+Test, Header\+Line)
+\begin{DoxyCompactList}\small\item\em Testuje funkcjê waliduj¹c¹ linie z nag³ówkami. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_af24d81ec3650e650a2fdf251f75f63cb}{TEST}} (Line\+Validation\+Test, Line\+With\+Invalid\+Characters)
+\begin{DoxyCompactList}\small\item\em Testuje funkcjê waliduj¹c¹ linie z nieprawid³owymi znakami. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_ada664310cbb2b17378644995f7495f10}{TEST}} (Tree\+Data\+Test, Add\+Data)
+\begin{DoxyCompactList}\small\item\em Testuje dodawanie danych do struktury drzewa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_aaf7fb70fde016b80bc505cb48eab8217}{TEST}} (Tree\+Data\+Test, Calculate\+Sums\+Between\+Dates)
+\begin{DoxyCompactList}\small\item\em Testuje obliczanie sum w strukturze drzewa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+Zawiera zestaw testów jednostkowych dla modu³ów \doxylink{class_row_data}{Row\+Data}, \doxylink{class_tree_data}{Tree\+Data}, Logger i Line\+Validation. 
+
+Testy jednostkowe zosta³y zaimplementowane z u¿yciem frameworka Google\+Test. 
+
+Definicja w pliku \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{test_8cpp_a0a8d6a7ea2084c7e002afaf78bcabd47}\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily \label{test_8cpp_a0a8d6a7ea2084c7e002afaf78bcabd47} 
+TEST (\begin{DoxyParamCaption}\item[{Line\+Validation\+Test}]{}{, }\item[{Empty\+Line}]{}{}\end{DoxyParamCaption})}
+
+
+
+Testuje funkcjê waliduj¹c¹ puste linie. 
+
+Sprawdza, czy funkcja zwraca false dla pustej linii. \texorpdfstring{$<$}{<} Walidacja pustej linii.
+
+Definicja w linii \mbox{\hyperlink{test_8cpp_source_l00054}{54}} pliku \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+\Hypertarget{test_8cpp_a43da72f29fc4dd6f872f02293bf40e49}\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily \label{test_8cpp_a43da72f29fc4dd6f872f02293bf40e49} 
+TEST (\begin{DoxyParamCaption}\item[{Line\+Validation\+Test}]{}{, }\item[{Header\+Line}]{}{}\end{DoxyParamCaption})}
+
+
+
+Testuje funkcjê waliduj¹c¹ linie z nag³ówkami. 
+
+Sprawdza, czy funkcja zwraca false dla linii z nag³ówkiem. \texorpdfstring{$<$}{<} Walidacja linii z nag³ówkiem.
+
+Definicja w linii \mbox{\hyperlink{test_8cpp_source_l00061}{61}} pliku \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+\Hypertarget{test_8cpp_af24d81ec3650e650a2fdf251f75f63cb}\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily \label{test_8cpp_af24d81ec3650e650a2fdf251f75f63cb} 
+TEST (\begin{DoxyParamCaption}\item[{Line\+Validation\+Test}]{}{, }\item[{Line\+With\+Invalid\+Characters}]{}{}\end{DoxyParamCaption})}
+
+
+
+Testuje funkcjê waliduj¹c¹ linie z nieprawid³owymi znakami. 
+
+Sprawdza, czy funkcja zwraca false dla linii zawieraj¹cych nieprawid³owe znaki. \texorpdfstring{$<$}{<} Walidacja linii z nieprawid³owymi znakami.
+
+Definicja w linii \mbox{\hyperlink{test_8cpp_source_l00068}{68}} pliku \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+\Hypertarget{test_8cpp_a6839138c69cddc05afde06efce5ea07e}\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily \label{test_8cpp_a6839138c69cddc05afde06efce5ea07e} 
+TEST (\begin{DoxyParamCaption}\item[{Row\+Data\+Test}]{}{, }\item[{Constructor\+From\+String}]{}{}\end{DoxyParamCaption})}
+
+
+
+Testuje konstruktor klasy \doxylink{class_row_data}{Row\+Data}. 
+
+Sprawdza, czy wartoœci wczytane z ci¹gu znaków s¹ poprawnie przypisane. 
+
+Definicja w linii \mbox{\hyperlink{test_8cpp_source_l00018}{18}} pliku \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+\Hypertarget{test_8cpp_a1879fbc117d0d01dfa6fbc52ccd40371}\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily \label{test_8cpp_a1879fbc117d0d01dfa6fbc52ccd40371} 
+TEST (\begin{DoxyParamCaption}\item[{Row\+Data\+Test}]{}{, }\item[{Serialization}]{}{}\end{DoxyParamCaption})}
+
+
+
+Testuje serializacjê i deserializacjê klasy \doxylink{class_row_data}{Row\+Data}. 
+
+Sprawdza, czy dane zapisane do pliku binarnego s¹ poprawnie odczytywane. \texorpdfstring{$<$}{<} Serializacja danych do pliku binarnego.
+
+\texorpdfstring{$<$}{<} Deserializacja danych z pliku binarnego.
+
+Definicja w linii \mbox{\hyperlink{test_8cpp_source_l00032}{32}} pliku \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+\Hypertarget{test_8cpp_ada664310cbb2b17378644995f7495f10}\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily \label{test_8cpp_ada664310cbb2b17378644995f7495f10} 
+TEST (\begin{DoxyParamCaption}\item[{Tree\+Data\+Test}]{}{, }\item[{Add\+Data}]{}{}\end{DoxyParamCaption})}
+
+
+
+Testuje dodawanie danych do struktury drzewa. 
+
+Sprawdza, czy dane s¹ poprawnie przechowywane w strukturze drzewa. \texorpdfstring{$<$}{<} Dodanie danych do struktury drzewa.
+
+\texorpdfstring{$<$}{<} Sprawdzenie, czy dodany rekord jest w drzewie.
+
+Definicja w linii \mbox{\hyperlink{test_8cpp_source_l00075}{75}} pliku \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+\Hypertarget{test_8cpp_aaf7fb70fde016b80bc505cb48eab8217}\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily \label{test_8cpp_aaf7fb70fde016b80bc505cb48eab8217} 
+TEST (\begin{DoxyParamCaption}\item[{Tree\+Data\+Test}]{}{, }\item[{Calculate\+Sums\+Between\+Dates}]{}{}\end{DoxyParamCaption})}
+
+
+
+Testuje obliczanie sum w strukturze drzewa. 
+
+Sprawdza, czy sumy s¹ poprawnie obliczane w okreœlonym przedziale czasowym. \texorpdfstring{$<$}{<} Obliczanie sum w okreœlonym przedziale czasowym.
+
+\texorpdfstring{$<$}{<} Weryfikacja sum dla autokonsumpcji.
+
+\texorpdfstring{$<$}{<} Weryfikacja sum dla eksportu.
+
+\texorpdfstring{$<$}{<} Weryfikacja sum dla importu.
+
+\texorpdfstring{$<$}{<} Weryfikacja sum dla poboru.
+
+\texorpdfstring{$<$}{<} Weryfikacja sum dla produkcji.
+
+Definicja w linii \mbox{\hyperlink{test_8cpp_source_l00093}{93}} pliku \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+

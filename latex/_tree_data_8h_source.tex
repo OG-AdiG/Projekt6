@@ -1,0 +1,67 @@
+\doxysection{Tree\+Data.\+h}
+\hypertarget{_tree_data_8h_source}{}\label{_tree_data_8h_source}\index{P6/TreeData.h@{P6/TreeData.h}}
+\mbox{\hyperlink{_tree_data_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ TREEDATA\_H}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ TREEDATA\_H}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_row_data_8h}{RowData.h}}"{}}\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00016}\mbox{\hyperlink{class_tree_data}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tree_data}{TreeData}}\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00017}00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00021}\mbox{\hyperlink{struct_tree_data_1_1_quarter_node}{00021}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_tree_data_1_1_quarter_node}{QuarterNode}}\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00022}\mbox{\hyperlink{struct_tree_data_1_1_quarter_node_ac339b88c6936439f91468ab428b685df}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tree_data_1_1_quarter_node_ac339b88c6936439f91468ab428b685df}{quarter}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00023}\mbox{\hyperlink{struct_tree_data_1_1_quarter_node_ac3369f487aef182bfa23caa1a60810f8}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tree_data_1_1_quarter_node_ac3369f487aef182bfa23caa1a60810f8}{hour}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00024}\mbox{\hyperlink{struct_tree_data_1_1_quarter_node_a520da3ab8f13a728aad79925ebe5cdc0}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tree_data_1_1_quarter_node_a520da3ab8f13a728aad79925ebe5cdc0}{minute}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00025}\mbox{\hyperlink{struct_tree_data_1_1_quarter_node_a0ee7ddc938660f20b0ef81c4de9a0b41}{00025}}\ \ \ \ \ \ \ \ \ std::vector<RowData>\ \mbox{\hyperlink{struct_tree_data_1_1_quarter_node_a0ee7ddc938660f20b0ef81c4de9a0b41}{data}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00026}00026\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00031}\mbox{\hyperlink{struct_tree_data_1_1_day_node}{00031}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_tree_data_1_1_day_node}{DayNode}}\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00032}\mbox{\hyperlink{struct_tree_data_1_1_day_node_a04b5b96b96fc174adccc7e68bb829940}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tree_data_1_1_day_node_a04b5b96b96fc174adccc7e68bb829940}{day}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00033}\mbox{\hyperlink{struct_tree_data_1_1_day_node_a78e6c371c4e5df7b4b1ce20f29b17e28}{00033}}\ \ \ \ \ \ \ \ \ std::map<int,\ QuarterNode>\ \mbox{\hyperlink{struct_tree_data_1_1_day_node_a78e6c371c4e5df7b4b1ce20f29b17e28}{quarters}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00034}00034\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00039}\mbox{\hyperlink{struct_tree_data_1_1_month_node}{00039}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_tree_data_1_1_month_node}{MonthNode}}\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00040}\mbox{\hyperlink{struct_tree_data_1_1_month_node_ad3de68542e77c64983a1f1965ef64611}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tree_data_1_1_month_node_ad3de68542e77c64983a1f1965ef64611}{month}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00041}\mbox{\hyperlink{struct_tree_data_1_1_month_node_affe544862f8b2f3beda81a8f364d0cc0}{00041}}\ \ \ \ \ \ \ \ \ std::map<int,\ DayNode>\ \mbox{\hyperlink{struct_tree_data_1_1_month_node_affe544862f8b2f3beda81a8f364d0cc0}{days}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00042}00042\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00047}\mbox{\hyperlink{struct_tree_data_1_1_year_node}{00047}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_tree_data_1_1_year_node}{YearNode}}\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00048}\mbox{\hyperlink{struct_tree_data_1_1_year_node_ab5b087991a9243b8e4da3f141471453c}{00048}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tree_data_1_1_year_node_ab5b087991a9243b8e4da3f141471453c}{year}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00049}\mbox{\hyperlink{struct_tree_data_1_1_year_node_addf7aee60946340b38cea2d703d53596}{00049}}\ \ \ \ \ \ \ \ \ std::map<int,\ MonthNode>\ \mbox{\hyperlink{struct_tree_data_1_1_year_node_addf7aee60946340b38cea2d703d53596}{months}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00050}00050\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tree_data_ac6239c9a11fcf00626094015fe4bd099}{addData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_row_data}{RowData}}\&\ rowData);}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tree_data_a8ef9b84508f937c668c08a8bada8e169}{print}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00068}00068\ \ \ \ \ std::vector<RowData>\ \mbox{\hyperlink{class_tree_data_a138d9e60b0b966f62a1593cb13c3a967}{getDataBetweenDates}}(\textcolor{keyword}{const}\ std::string\&\ startDate,\ \textcolor{keyword}{const}\ std::string\&\ endDate)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tree_data_a25ade5266d9186b0ef8dda8138122a73}{calculateSumsBetweenDates}}(\textcolor{keyword}{const}\ std::string\&\ startDate,\ \textcolor{keyword}{const}\ std::string\&\ endDate,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\&\ selfConsumptionSum,\ \textcolor{keywordtype}{float}\&\ exportSum,\ \textcolor{keywordtype}{float}\&\ importSum,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\&\ consumptionSum,\ \textcolor{keywordtype}{float}\&\ productionSum)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00094}00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tree_data_a2cbc4518323971c7b73028dfd748e1df}{calculateAveragesBetweenDates}}(\textcolor{keyword}{const}\ std::string\&\ startDate,\ \textcolor{keyword}{const}\ std::string\&\ endDate,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\&\ selfConsumptionAvg,\ \textcolor{keywordtype}{float}\&\ exportAvg,\ \textcolor{keywordtype}{float}\&\ importAvg,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\&\ consumptionAvg,\ \textcolor{keywordtype}{float}\&\ productionAvg)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00110}\mbox{\hyperlink{class_tree_data_a1af4540ec12ca922880fd3ebe095bdf9}{00110}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tree_data_a1af4540ec12ca922880fd3ebe095bdf9}{compareDataBetweenDates}}(\textcolor{keyword}{const}\ std::string\&\ startDate1,\ \textcolor{keyword}{const}\ std::string\&\ endDate1,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ startDate2,\ \textcolor{keyword}{const}\ std::string\&\ endDate2,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\&\ selfConsumptionDiff,\ \textcolor{keywordtype}{float}\&\ exportDiff,\ \textcolor{keywordtype}{float}\&\ importDiff,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\&\ consumptionDiff,\ \textcolor{keywordtype}{float}\&\ productionDiff)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00123}\mbox{\hyperlink{class_tree_data_ab9555b557252e150f78f7da428812161}{00123}}\ \ \ \ \ std::vector<RowData>\ \mbox{\hyperlink{class_tree_data_ab9555b557252e150f78f7da428812161}{searchRecordsWithTolerance}}(\textcolor{keyword}{const}\ std::string\&\ startDate,\ \textcolor{keyword}{const}\ std::string\&\ endDate,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ value,\ \textcolor{keywordtype}{float}\ tolerance)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00126}00126\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00127}\mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{00127}}\ \ \ \ \ std::map<int,\ YearNode>\ \mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{years}};\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00128}00128\ \};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8h_source_l00130}00130\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TREEDATA\_H}}
+
+\end{DoxyCode}

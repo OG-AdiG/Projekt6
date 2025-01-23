@@ -1,0 +1,450 @@
+\doxysection{Dokumentacja klasy Row\+Data}
+\hypertarget{class_row_data}{}\label{class_row_data}\index{RowData@{RowData}}
+
+
+Klasa reprezentuj¹ca dane jednego wiersza z pliku CSV, zawieraj¹ca ró¿ne parametry energetyczne.  
+
+
+
+
+{\ttfamily \#include $<$Row\+Data.\+h$>$}
+
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_row_data_ae31fabe99124c40a2c79d043b64d279e}{Row\+Data}} (const string \&line)
+\begin{DoxyCompactList}\small\item\em Konstruktor przetwarzaj¹cy wiersz danych wejœciowych w formacie CSV. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_row_data_a73bc628dd14932a1966abb9026d65f0b}{Row\+Data}} (ifstream \&in)
+\begin{DoxyCompactList}\small\item\em Konstruktor odczytuj¹cy dane z pliku binarnego. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_row_data_a7a815bc1cce5d88bf836626c2b7ad211}{display}} () const
+\begin{DoxyCompactList}\small\item\em Wypisuje wszystkie dane obiektu na standardowe wyjœcie. Funkcja ta drukuje pe³ne dane wiersza, w tym datê i wszystkie wartoœci energetyczne. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_row_data_a3496535202ddb2f4943750baee45fa51}{display\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Wypisuje tylko wartoœci energetyczne, pomijaj¹c datê, na standardowe wyjœcie. Drukuje wartoœci autokonsumpcji, eksportu, importu, poboru i produkcji, ale bez daty. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_row_data_a36414d47d2e9b8d5047e831ed695817c}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca dane w formie tekstowego ci¹gu znaków. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_row_data_a06892878b39d430c0ceda25bee35dbef}{save\+To\+Binary}} (ofstream \&out) const
+\begin{DoxyCompactList}\small\item\em Serializuje obiekt do pliku binarnego. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_row_data_a92c46068eadc9a64e8c9874dd2dba7c2}{load\+From\+Binary}} (ifstream \&in)
+\begin{DoxyCompactList}\small\item\em Deserializuje obiekt z pliku binarnego. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_row_data_a557b67e0a3a797efae088b1033cd3170}{get\+Date}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca datê, która znajduje siê w wierszu. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_row_data_a83094e59f93b1086ed00ef5ad21c54ad}{get\+Self\+Consumption}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca wartoœæ autokonsumpcji z wiersza danych. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_row_data_a166c9b6568b2fc00a58b5ef88b229b60}{get\+Export}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca wartoœæ eksportu z wiersza danych. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_row_data_a5c5cb515a00e3872ff3191fbcdaebea9}{get\+Import}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca wartoœæ importu z wiersza danych. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_row_data_aa727f72ad14915f547446e837f817f7b}{get\+Consumption}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca wartoœæ poboru energii z wiersza danych. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_row_data_a56213981c7aa5f155a2f29b52eb6dd78}{get\+Production}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca wartoœæ produkcji energii z wiersza danych. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_row_data_ac5db7841516756baff06e6034066206b}{date}}
+\begin{DoxyCompactList}\small\item\em Data wiersza w formacie tekstowym (np. "{}\+YYYY-\/\+MM-\/\+DD"{}). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_row_data_a06358d682a04c1b85232c10ac55a9cec}{self\+Consumption}}
+\begin{DoxyCompactList}\small\item\em Autokonsumpcja w watach (W), iloœæ energii zu¿ytej lokalnie. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_row_data_ad99bfe526d4a2070147cfeb207757726}{export\+Value}}
+\begin{DoxyCompactList}\small\item\em Eksport energii w watach (W), iloœæ energii oddanej do sieci. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_row_data_a98cb1fa7a2e0bd89a78147d4ef1f4e4d}{import\+Value}}
+\begin{DoxyCompactList}\small\item\em Import energii w watach (W), iloœæ energii pobranej z sieci. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_row_data_a891f9ce94baa76e5e8d9d17829209e78}{consumption}}
+\begin{DoxyCompactList}\small\item\em Pobór energii z sieci w watach (W). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_row_data_a28eb3872c83d5ea492353eb92640962a}{production}}
+\begin{DoxyCompactList}\small\item\em Produkcja energii w watach (W), energia wytworzona przez system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+Klasa reprezentuj¹ca dane jednego wiersza z pliku CSV, zawieraj¹ca ró¿ne parametry energetyczne. 
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00017}{17}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_row_data_ae31fabe99124c40a2c79d043b64d279e}\index{RowData@{RowData}!RowData@{RowData}}
+\index{RowData@{RowData}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{RowData()}{RowData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_row_data_ae31fabe99124c40a2c79d043b64d279e} 
+Row\+Data\+::\+Row\+Data (\begin{DoxyParamCaption}\item[{const string \&}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor przetwarzaj¹cy wiersz danych wejœciowych w formacie CSV. 
+
+Konstruktor przetwarzaj¹cy wiersz danych z formatu CSV.
+
+
+\begin{DoxyParams}{Parametry}
+{\em line} & Wiersz danych w formacie tekstowym, zawieraj¹cy ró¿ne wartoœci oddzielone przecinkami. Przetwarza wiersz CSV na odpowiednie pola obiektu, konwertuj¹c wartoœci na odpowiednie typy.\\
+\hline
+{\em line} & Wiersz danych wejœciowych, zawieraj¹cy wartoœci oddzielone przecinkami. Konstruktor dzieli wiersz na poszczególne elementy, konwertuje wartoœci na odpowiednie typy i zapisuje je w odpowiednich polach obiektu. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Wektor przechowuj¹cy rozdzielone wartoœci z wiersza CSV.
+
+\texorpdfstring{$<$}{<} Strumieñ do rozdzielania wiersza na elementy.
+
+\texorpdfstring{$<$}{<} Zmienna do przechowywania pojedynczej wartoœci wczytanej z wiersza.
+
+\texorpdfstring{$<$}{<} Usuwanie cudzys³owów.
+
+\texorpdfstring{$<$}{<} Dodawanie wartoœci do wektora.
+
+\texorpdfstring{$<$}{<} Data wiersza.
+
+\texorpdfstring{$<$}{<} Autokonsumpcja (w watach).
+
+\texorpdfstring{$<$}{<} Eksport energii (w watach).
+
+\texorpdfstring{$<$}{<} Import energii (w watach).
+
+\texorpdfstring{$<$}{<} Pobór energii (w watach).
+
+\texorpdfstring{$<$}{<} Produkcja energii (w watach).
+
+\texorpdfstring{$<$}{<} Logowanie wczytanego wiersza.
+
+Definicja w linii \mbox{\hyperlink{_row_data_8cpp_source_l00016}{16}} pliku \mbox{\hyperlink{_row_data_8cpp_source}{Row\+Data.\+cpp}}.
+
+\Hypertarget{class_row_data_a73bc628dd14932a1966abb9026d65f0b}\index{RowData@{RowData}!RowData@{RowData}}
+\index{RowData@{RowData}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{RowData()}{RowData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_row_data_a73bc628dd14932a1966abb9026d65f0b} 
+Row\+Data\+::\+Row\+Data (\begin{DoxyParamCaption}\item[{ifstream \&}]{in}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor odczytuj¹cy dane z pliku binarnego. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em in} & Strumieñ wejœciowy, z którego odczytywane s¹ zserializowane dane. Inicjalizuje obiekt na podstawie zserializowanych danych zapisanych w pliku binarnym.\\
+\hline
+{\em in} & Strumieñ wejœciowy, z którego wczytywane s¹ dane z pliku binarnego. Konstruktor ten deserializuje dane zapisane w pliku binarnym i inicjalizuje obiekt na ich podstawie. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Deserializacja danych z pliku binarnego.
+
+Definicja w linii \mbox{\hyperlink{_row_data_8cpp_source_l00041}{41}} pliku \mbox{\hyperlink{_row_data_8cpp_source}{Row\+Data.\+cpp}}.
+
+
+
+\doxysubsection{Dokumentacja funkcji skÅ‚adowych}
+\Hypertarget{class_row_data_a7a815bc1cce5d88bf836626c2b7ad211}\index{RowData@{RowData}!display@{display}}
+\index{display@{display}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily \label{class_row_data_a7a815bc1cce5d88bf836626c2b7ad211} 
+void Row\+Data\+::display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Wypisuje wszystkie dane obiektu na standardowe wyjœcie. Funkcja ta drukuje pe³ne dane wiersza, w tym datê i wszystkie wartoœci energetyczne. 
+
+Wypisuje wszystkie dane na standardowe wyjœcie. Funkcja ta drukuje datê oraz wszystkie wartoœci energetyczne obiektu wiersza. 
+
+Definicja w linii \mbox{\hyperlink{_row_data_8cpp_source_l00047}{47}} pliku \mbox{\hyperlink{_row_data_8cpp_source}{Row\+Data.\+cpp}}.
+
+\Hypertarget{class_row_data_a3496535202ddb2f4943750baee45fa51}\index{RowData@{RowData}!displayData@{displayData}}
+\index{displayData@{displayData}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{displayData()}{displayData()}}
+{\footnotesize\ttfamily \label{class_row_data_a3496535202ddb2f4943750baee45fa51} 
+void Row\+Data\+::display\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Wypisuje tylko wartoœci energetyczne, pomijaj¹c datê, na standardowe wyjœcie. Drukuje wartoœci autokonsumpcji, eksportu, importu, poboru i produkcji, ale bez daty. 
+
+Wypisuje tylko dane liczbowe (bez daty) na standardowe wyjœcie. Drukuje tylko wartoœci energetyczne, pomijaj¹c datê. 
+
+Definicja w linii \mbox{\hyperlink{_row_data_8cpp_source_l00053}{53}} pliku \mbox{\hyperlink{_row_data_8cpp_source}{Row\+Data.\+cpp}}.
+
+\Hypertarget{class_row_data_aa727f72ad14915f547446e837f817f7b}\index{RowData@{RowData}!getConsumption@{getConsumption}}
+\index{getConsumption@{getConsumption}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{getConsumption()}{getConsumption()}}
+{\footnotesize\ttfamily \label{class_row_data_aa727f72ad14915f547446e837f817f7b} 
+float Row\+Data\+::get\+Consumption (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca wartoœæ poboru energii z wiersza danych. 
+
+\begin{DoxyReturn}{Zwraca}
+Wartoœæ poboru energii w watach (W) jako liczba zmiennoprzecinkowa. Funkcja ta zwraca wartoœæ poboru energii z sieci przypisan¹ do danego wiersza danych. 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00075}{75}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_a557b67e0a3a797efae088b1033cd3170}\index{RowData@{RowData}!getDate@{getDate}}
+\index{getDate@{getDate}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily \label{class_row_data_a557b67e0a3a797efae088b1033cd3170} 
+string Row\+Data\+::get\+Date (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca datê, która znajduje siê w wierszu. 
+
+\begin{DoxyReturn}{Zwraca}
+Data wiersza w formacie tekstowym (np. "{}\+YYYY-\/\+MM-\/\+DD"{}). Funkcja ta umo¿liwia pobranie daty przypisanej do danego wiersza danych. 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00055}{55}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_a166c9b6568b2fc00a58b5ef88b229b60}\index{RowData@{RowData}!getExport@{getExport}}
+\index{getExport@{getExport}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{getExport()}{getExport()}}
+{\footnotesize\ttfamily \label{class_row_data_a166c9b6568b2fc00a58b5ef88b229b60} 
+float Row\+Data\+::get\+Export (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca wartoœæ eksportu z wiersza danych. 
+
+\begin{DoxyReturn}{Zwraca}
+Wartoœæ eksportu w watach (W) jako liczba zmiennoprzecinkowa. Funkcja ta zwraca wartoœæ eksportu energii przypisan¹ do danego wiersza. 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00065}{65}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_a5c5cb515a00e3872ff3191fbcdaebea9}\index{RowData@{RowData}!getImport@{getImport}}
+\index{getImport@{getImport}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{getImport()}{getImport()}}
+{\footnotesize\ttfamily \label{class_row_data_a5c5cb515a00e3872ff3191fbcdaebea9} 
+float Row\+Data\+::get\+Import (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca wartoœæ importu z wiersza danych. 
+
+\begin{DoxyReturn}{Zwraca}
+Wartoœæ importu w watach (W) jako liczba zmiennoprzecinkowa. Funkcja ta zwraca wartoœæ importu energii dla danego wiersza. 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00070}{70}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_a56213981c7aa5f155a2f29b52eb6dd78}\index{RowData@{RowData}!getProduction@{getProduction}}
+\index{getProduction@{getProduction}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{getProduction()}{getProduction()}}
+{\footnotesize\ttfamily \label{class_row_data_a56213981c7aa5f155a2f29b52eb6dd78} 
+float Row\+Data\+::get\+Production (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca wartoœæ produkcji energii z wiersza danych. 
+
+\begin{DoxyReturn}{Zwraca}
+Wartoœæ produkcji energii w watach (W) jako liczba zmiennoprzecinkowa. Funkcja ta umo¿liwia dostêp do wartoœci produkcji energii przypisanej do danego wiersza. 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00080}{80}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_a83094e59f93b1086ed00ef5ad21c54ad}\index{RowData@{RowData}!getSelfConsumption@{getSelfConsumption}}
+\index{getSelfConsumption@{getSelfConsumption}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{getSelfConsumption()}{getSelfConsumption()}}
+{\footnotesize\ttfamily \label{class_row_data_a83094e59f93b1086ed00ef5ad21c54ad} 
+float Row\+Data\+::get\+Self\+Consumption (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca wartoœæ autokonsumpcji z wiersza danych. 
+
+\begin{DoxyReturn}{Zwraca}
+Wartoœæ autokonsumpcji w watach (W) jako liczba zmiennoprzecinkowa. Funkcja ta umo¿liwia dostêp do wartoœci autokonsumpcji dla danego wiersza danych. 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00060}{60}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_a92c46068eadc9a64e8c9874dd2dba7c2}\index{RowData@{RowData}!loadFromBinary@{loadFromBinary}}
+\index{loadFromBinary@{loadFromBinary}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{loadFromBinary()}{loadFromBinary()}}
+{\footnotesize\ttfamily \label{class_row_data_a92c46068eadc9a64e8c9874dd2dba7c2} 
+void Row\+Data\+::load\+From\+Binary (\begin{DoxyParamCaption}\item[{ifstream \&}]{in}{}\end{DoxyParamCaption})}
+
+
+
+Deserializuje obiekt z pliku binarnego. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em in} & Strumieñ wejœciowy, z którego wczytywane bêd¹ zserializowane dane obiektu. Inicjalizuje obiekt na podstawie danych w formacie binarnym.\\
+\hline
+{\em in} & Strumieñ wejœciowy, z którego wczytywane bêd¹ zserializowane dane obiektu. Funkcja ta odczytuje dane zapisane w formacie binarnym i rekonstruuje obiekt na ich podstawie. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Zmienna przechowuj¹ca rozmiar daty.
+
+\texorpdfstring{$<$}{<} Wczytanie rozmiaru daty.
+
+\texorpdfstring{$<$}{<} Zmienna do przechowywania daty.
+
+\texorpdfstring{$<$}{<} Wczytanie samej daty.
+
+\texorpdfstring{$<$}{<} Wczytanie wartoœci autokonsumpcji.
+
+\texorpdfstring{$<$}{<} Wczytanie wartoœci eksportu.
+
+\texorpdfstring{$<$}{<} Wczytanie wartoœci importu.
+
+\texorpdfstring{$<$}{<} Wczytanie wartoœci poboru.
+
+\texorpdfstring{$<$}{<} Wczytanie wartoœci produkcji.
+
+Definicja w linii \mbox{\hyperlink{_row_data_8cpp_source_l00083}{83}} pliku \mbox{\hyperlink{_row_data_8cpp_source}{Row\+Data.\+cpp}}.
+
+\Hypertarget{class_row_data_a06892878b39d430c0ceda25bee35dbef}\index{RowData@{RowData}!saveToBinary@{saveToBinary}}
+\index{saveToBinary@{saveToBinary}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{saveToBinary()}{saveToBinary()}}
+{\footnotesize\ttfamily \label{class_row_data_a06892878b39d430c0ceda25bee35dbef} 
+void Row\+Data\+::save\+To\+Binary (\begin{DoxyParamCaption}\item[{ofstream \&}]{out}{}\end{DoxyParamCaption}) const}
+
+
+
+Serializuje obiekt do pliku binarnego. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em out} & Strumieñ wyjœciowy, do którego zapisane bêd¹ dane obiektu w formacie binarnym. Funkcja ta zapisuje wszystkie wartoœci obiektu w postaci binarnej, umo¿liwiaj¹c póŸniejsze odczytanie.\\
+\hline
+{\em out} & Strumieñ wyjœciowy, do którego zapisane bêd¹ dane obiektu. Funkcja zapisuje dane obiektu w formacie binarnym, umo¿liwiaj¹c ich póŸniejsze odczytanie. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Rozmiar daty wiersza w bajtach.
+
+\texorpdfstring{$<$}{<} Zapisanie rozmiaru daty.
+
+\texorpdfstring{$<$}{<} Zapisanie daty w postaci tekstowej.
+
+\texorpdfstring{$<$}{<} Zapisanie wartoœci autokonsumpcji.
+
+\texorpdfstring{$<$}{<} Zapisanie wartoœci eksportu.
+
+\texorpdfstring{$<$}{<} Zapisanie wartoœci importu.
+
+\texorpdfstring{$<$}{<} Zapisanie wartoœci poboru.
+
+\texorpdfstring{$<$}{<} Zapisanie wartoœci produkcji.
+
+Definicja w linii \mbox{\hyperlink{_row_data_8cpp_source_l00069}{69}} pliku \mbox{\hyperlink{_row_data_8cpp_source}{Row\+Data.\+cpp}}.
+
+\Hypertarget{class_row_data_a36414d47d2e9b8d5047e831ed695817c}\index{RowData@{RowData}!toString@{toString}}
+\index{toString@{toString}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{class_row_data_a36414d47d2e9b8d5047e831ed695817c} 
+string Row\+Data\+::to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Zwraca dane w formie tekstowego ci¹gu znaków. 
+
+Zwraca dane jako ci¹g znaków.
+
+\begin{DoxyReturn}{Zwraca}
+Dane w formacie tekstowym, które reprezentuj¹ wszystkie wartoœci wiersza. Funkcja ta zamienia dane obiektu na jedn¹ liniê tekstu w celu ³atwego zapisu lub wyœwietlenia.
+
+Dane w formacie tekstowym, zawieraj¹ce wszystkie wartoœci wiersza. Funkcja ta zamienia dane obiektu na ci¹g znaków, co mo¿e byæ przydatne do zapisania lub wyœwietlenia danych w postaci tekstowej. 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8cpp_source_l00061}{61}} pliku \mbox{\hyperlink{_row_data_8cpp_source}{Row\+Data.\+cpp}}.
+
+
+
+\doxysubsection{Dokumentacja atrybutÃ³w skÅ‚adowych}
+\Hypertarget{class_row_data_a891f9ce94baa76e5e8d9d17829209e78}\index{RowData@{RowData}!consumption@{consumption}}
+\index{consumption@{consumption}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{consumption}{consumption}}
+{\footnotesize\ttfamily \label{class_row_data_a891f9ce94baa76e5e8d9d17829209e78} 
+float Row\+Data\+::consumption\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pobór energii z sieci w watach (W). 
+
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00087}{87}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_ac5db7841516756baff06e6034066206b}\index{RowData@{RowData}!date@{date}}
+\index{date@{date}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{date}{date}}
+{\footnotesize\ttfamily \label{class_row_data_ac5db7841516756baff06e6034066206b} 
+string Row\+Data\+::date\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Data wiersza w formacie tekstowym (np. "{}\+YYYY-\/\+MM-\/\+DD"{}). 
+
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00083}{83}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_ad99bfe526d4a2070147cfeb207757726}\index{RowData@{RowData}!exportValue@{exportValue}}
+\index{exportValue@{exportValue}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{exportValue}{exportValue}}
+{\footnotesize\ttfamily \label{class_row_data_ad99bfe526d4a2070147cfeb207757726} 
+float Row\+Data\+::export\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Eksport energii w watach (W), iloœæ energii oddanej do sieci. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00085}{85}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_a98cb1fa7a2e0bd89a78147d4ef1f4e4d}\index{RowData@{RowData}!importValue@{importValue}}
+\index{importValue@{importValue}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{importValue}{importValue}}
+{\footnotesize\ttfamily \label{class_row_data_a98cb1fa7a2e0bd89a78147d4ef1f4e4d} 
+float Row\+Data\+::import\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Import energii w watach (W), iloœæ energii pobranej z sieci. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00086}{86}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_a28eb3872c83d5ea492353eb92640962a}\index{RowData@{RowData}!production@{production}}
+\index{production@{production}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{production}{production}}
+{\footnotesize\ttfamily \label{class_row_data_a28eb3872c83d5ea492353eb92640962a} 
+float Row\+Data\+::production\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Produkcja energii w watach (W), energia wytworzona przez system. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00088}{88}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+\Hypertarget{class_row_data_a06358d682a04c1b85232c10ac55a9cec}\index{RowData@{RowData}!selfConsumption@{selfConsumption}}
+\index{selfConsumption@{selfConsumption}!RowData@{RowData}}
+\doxysubsubsection{\texorpdfstring{selfConsumption}{selfConsumption}}
+{\footnotesize\ttfamily \label{class_row_data_a06358d682a04c1b85232c10ac55a9cec} 
+float Row\+Data\+::self\+Consumption\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Autokonsumpcja w watach (W), iloœæ energii zu¿ytej lokalnie. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_row_data_8h_source_l00084}{84}} pliku \mbox{\hyperlink{_row_data_8h_source}{Row\+Data.\+h}}.
+
+
+
+Dokumentacja dla tej klasy zostaÅ‚a wygenerowana z plikÃ³w\+:\begin{DoxyCompactItemize}
+\item 
+P6/\mbox{\hyperlink{_row_data_8h}{Row\+Data.\+h}}\item 
+P6/\mbox{\hyperlink{_row_data_8cpp}{Row\+Data.\+cpp}}\end{DoxyCompactItemize}

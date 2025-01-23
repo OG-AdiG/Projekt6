@@ -1,0 +1,70 @@
+\doxysection{Dokumentacja pliku P6/\+Log\+Manager.h}
+\hypertarget{_log_manager_8h}{}\label{_log_manager_8h}\index{P6/LogManager.h@{P6/LogManager.h}}
+
+
+Deklaracja klasy \doxylink{class_log_manager}{Log\+Manager} do obs³ugi logowania komunikatów.  
+
+
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_log_manager}{Log\+Manager}}
+\begin{DoxyCompactList}\small\item\em Klasa obs³uguj¹ca logowanie komunikatów do plików tekstowych. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_log_manager}{Log\+Manager}} \mbox{\hyperlink{_log_manager_8h_a3d8ceb0f7fb26c89ca1e0723b7b99bba}{global\+Logger}}
+\begin{DoxyCompactList}\small\item\em Globalny logger dla standardowych komunikatów. Logger ten jest u¿ywany do zapisywania komunikatów informacyjnych oraz standardowych. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_log_manager}{Log\+Manager}} \mbox{\hyperlink{_log_manager_8h_a07c69717dac1a757af12c19fdfc9d561}{error\+Logger}}
+\begin{DoxyCompactList}\small\item\em Globalny logger dla komunikatów b³êdów. Logger ten jest u¿ywany do zapisywania komunikatów zwi¹zanych z b³êdami oraz wyj¹tkami. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_log_manager_8h_af5809a5be0fca80df8a8cc6a56f7f434}{error\+Log\+Count}}
+\begin{DoxyCompactList}\small\item\em Licznik wyst¹pieñ b³êdów logowanych przez error\+Logger. Zmienna ta przechowuje liczbê b³êdów zarejestrowanych przez error\+Logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+Deklaracja klasy \doxylink{class_log_manager}{Log\+Manager} do obs³ugi logowania komunikatów. 
+
+
+
+Definicja w pliku \mbox{\hyperlink{_log_manager_8h_source}{Log\+Manager.\+h}}.
+
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{_log_manager_8h_af5809a5be0fca80df8a8cc6a56f7f434}\index{LogManager.h@{LogManager.h}!errorLogCount@{errorLogCount}}
+\index{errorLogCount@{errorLogCount}!LogManager.h@{LogManager.h}}
+\doxysubsubsection{\texorpdfstring{errorLogCount}{errorLogCount}}
+{\footnotesize\ttfamily \label{_log_manager_8h_af5809a5be0fca80df8a8cc6a56f7f434} 
+int error\+Log\+Count\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Licznik wyst¹pieñ b³êdów logowanych przez error\+Logger. Zmienna ta przechowuje liczbê b³êdów zarejestrowanych przez error\+Logger. 
+
+Licznik wyst¹pieñ b³êdów logowanych przez error\+Logger. Licznik jest zwiêkszany za ka¿dym razem, gdy logger\+Error zapisuje komunikat b³êdu. 
+
+Definicja w linii \mbox{\hyperlink{_log_manager_8cpp_source_l00023}{23}} pliku \mbox{\hyperlink{_log_manager_8cpp_source}{Log\+Manager.\+cpp}}.
+
+\Hypertarget{_log_manager_8h_a07c69717dac1a757af12c19fdfc9d561}\index{LogManager.h@{LogManager.h}!errorLogger@{errorLogger}}
+\index{errorLogger@{errorLogger}!LogManager.h@{LogManager.h}}
+\doxysubsubsection{\texorpdfstring{errorLogger}{errorLogger}}
+{\footnotesize\ttfamily \label{_log_manager_8h_a07c69717dac1a757af12c19fdfc9d561} 
+\mbox{\hyperlink{class_log_manager}{Log\+Manager}} error\+Logger\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Globalny logger dla komunikatów b³êdów. Logger ten jest u¿ywany do zapisywania komunikatów zwi¹zanych z b³êdami oraz wyj¹tkami. 
+
+Globalny logger dla komunikatów b³êdów. Logger ten jest u¿ywany do zapisywania komunikatów zwi¹zanych z b³êdami do pliku. \Hypertarget{_log_manager_8h_a3d8ceb0f7fb26c89ca1e0723b7b99bba}\index{LogManager.h@{LogManager.h}!globalLogger@{globalLogger}}
+\index{globalLogger@{globalLogger}!LogManager.h@{LogManager.h}}
+\doxysubsubsection{\texorpdfstring{globalLogger}{globalLogger}}
+{\footnotesize\ttfamily \label{_log_manager_8h_a3d8ceb0f7fb26c89ca1e0723b7b99bba} 
+\mbox{\hyperlink{class_log_manager}{Log\+Manager}} global\+Logger\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Globalny logger dla standardowych komunikatów. Logger ten jest u¿ywany do zapisywania komunikatów informacyjnych oraz standardowych. 
+
+Globalny logger dla standardowych komunikatów. Logger ten jest u¿ywany do zapisywania standardowych komunikatów informacyjnych do pliku. 

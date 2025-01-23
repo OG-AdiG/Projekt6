@@ -1,0 +1,59 @@
+\doxysection{Dokumentacja pliku P6/\+Log\+Manager.cpp}
+\hypertarget{_log_manager_8cpp}{}\label{_log_manager_8cpp}\index{P6/LogManager.cpp@{P6/LogManager.cpp}}
+
+
+Implementacja klasy \doxylink{class_log_manager}{Log\+Manager} do obs³ugi logowania komunikatów.  
+
+
+{\ttfamily \#include "{}Log\+Manager.\+h"{}}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_log_manager}{Log\+Manager}} \mbox{\hyperlink{_log_manager_8cpp_a9ba06903b659c9d0441def0da8ec47f8}{global\+Logger}} ("{}log"{})
+\item 
+\mbox{\hyperlink{class_log_manager}{Log\+Manager}} \mbox{\hyperlink{_log_manager_8cpp_af38b4094b593e6d1c16ec8f7592998cc}{error\+Logger}} ("{}log\+\_\+error"{})
+\item 
+int \mbox{\hyperlink{_log_manager_8cpp_af5809a5be0fca80df8a8cc6a56f7f434}{error\+Log\+Count}} = 0
+\begin{DoxyCompactList}\small\item\em Licznik wyst¹pieñ b³êdów logowanych przez error\+Logger. Zmienna ta przechowuje liczbê b³êdów zarejestrowanych przez error\+Logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+Implementacja klasy \doxylink{class_log_manager}{Log\+Manager} do obs³ugi logowania komunikatów. 
+
+
+
+Definicja w pliku \mbox{\hyperlink{_log_manager_8cpp_source}{Log\+Manager.\+cpp}}.
+
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{_log_manager_8cpp_af5809a5be0fca80df8a8cc6a56f7f434}\index{LogManager.cpp@{LogManager.cpp}!errorLogCount@{errorLogCount}}
+\index{errorLogCount@{errorLogCount}!LogManager.cpp@{LogManager.cpp}}
+\doxysubsubsection{\texorpdfstring{errorLogCount}{errorLogCount}}
+{\footnotesize\ttfamily \label{_log_manager_8cpp_af5809a5be0fca80df8a8cc6a56f7f434} 
+int error\+Log\+Count = 0}
+
+
+
+Licznik wyst¹pieñ b³êdów logowanych przez error\+Logger. Zmienna ta przechowuje liczbê b³êdów zarejestrowanych przez error\+Logger. 
+
+Licznik wyst¹pieñ b³êdów logowanych przez error\+Logger. Licznik jest zwiêkszany za ka¿dym razem, gdy logger\+Error zapisuje komunikat b³êdu. 
+
+Definicja w linii \mbox{\hyperlink{_log_manager_8cpp_source_l00023}{23}} pliku \mbox{\hyperlink{_log_manager_8cpp_source}{Log\+Manager.\+cpp}}.
+
+\Hypertarget{_log_manager_8cpp_af38b4094b593e6d1c16ec8f7592998cc}\index{LogManager.cpp@{LogManager.cpp}!errorLogger@{errorLogger}}
+\index{errorLogger@{errorLogger}!LogManager.cpp@{LogManager.cpp}}
+\doxysubsubsection{\texorpdfstring{errorLogger}{errorLogger}}
+{\footnotesize\ttfamily \label{_log_manager_8cpp_af38b4094b593e6d1c16ec8f7592998cc} 
+\mbox{\hyperlink{class_log_manager}{Log\+Manager}} error\+Logger("{}log\+\_\+error"{}) (\begin{DoxyParamCaption}\item[{"{}log\+\_\+error"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_log_manager_8cpp_a9ba06903b659c9d0441def0da8ec47f8}\index{LogManager.cpp@{LogManager.cpp}!globalLogger@{globalLogger}}
+\index{globalLogger@{globalLogger}!LogManager.cpp@{LogManager.cpp}}
+\doxysubsubsection{\texorpdfstring{globalLogger}{globalLogger}}
+{\footnotesize\ttfamily \label{_log_manager_8cpp_a9ba06903b659c9d0441def0da8ec47f8} 
+\mbox{\hyperlink{class_log_manager}{Log\+Manager}} global\+Logger("{}log"{}) (\begin{DoxyParamCaption}\item[{"{}log"{}}]{}{}\end{DoxyParamCaption})}
+

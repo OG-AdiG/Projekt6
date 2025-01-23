@@ -1,0 +1,49 @@
+\doxysection{Line\+Validation.\+h}
+\hypertarget{_line_validation_8h_source}{}\label{_line_validation_8h_source}\index{P6/LineValidation.h@{P6/LineValidation.h}}
+\mbox{\hyperlink{_line_validation_8h}{IdÅº do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ LINEVALIDATION\_H}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ LINEVALIDATION\_H}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <cctype>}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_log_manager_8h}{LogManager.h}}"{}}\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00017}\mbox{\hyperlink{_line_validation_8h_af0848a17a462789065f4325be805a003}{00017}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_line_validation_8h_af0848a17a462789065f4325be805a003}{lineValidation}}(\textcolor{keyword}{const}\ std::string\&\ line)}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Sprawdzenie,\ czy\ wiersz\ jest\ pusty.}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (line.empty())}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_log_manager_8h_a07c69717dac1a757af12c19fdfc9d561}{errorLogger}}.\mbox{\hyperlink{class_log_manager_a186d560cd1b566d693640683c944ae2d}{log}}(\textcolor{stringliteral}{"{}Pusta\ linia"{}});\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ Sprawdzenie,\ czy\ wiersz\ zawiera\ nag³ówek.}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (line.find(\textcolor{stringliteral}{"{}Time"{}})\ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_log_manager_8h_a07c69717dac1a757af12c19fdfc9d561}{errorLogger}}.\mbox{\hyperlink{class_log_manager_a186d560cd1b566d693640683c944ae2d}{log}}(\textcolor{stringliteral}{"{}Znaleziono\ nag³ówek:\ "{}}\ +\ line);\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Sprawdzenie,\ czy\ wiersz\ zawiera\ litery.}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (std::any\_of(line.begin(),\ line.end(),\ [](\textcolor{keywordtype}{char}\ c)\ \{\ return\ std::isalpha(c);\ \}))}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_log_manager_8h_a07c69717dac1a757af12c19fdfc9d561}{errorLogger}}.\mbox{\hyperlink{class_log_manager_a186d560cd1b566d693640683c944ae2d}{log}}(\textcolor{stringliteral}{"{}Znaleziono\ inne\ dane:\ "{}}\ +\ line);\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Sprawdzenie,\ czy\ wiersz\ zawiera\ odpowiedni¹\ liczbê parametrów (5\ przecinków).}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (std::count(line.begin(),\ line.end(),\ \textcolor{charliteral}{','})\ !=\ 5)}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_log_manager_8h_a07c69717dac1a757af12c19fdfc9d561}{errorLogger}}.\mbox{\hyperlink{class_log_manager_a186d560cd1b566d693640683c944ae2d}{log}}(\textcolor{stringliteral}{"{}Nieprawid³owa\ liczba\ parametrów: "{}}\ +\ line);\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_line_validation_8h_source_l00049}00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LINEVALIDATION\_H}}
+
+\end{DoxyCode}

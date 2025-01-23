@@ -1,0 +1,168 @@
+\doxysection{Tree\+Data.\+cpp}
+\hypertarget{_tree_data_8cpp_source}{}\label{_tree_data_8cpp_source}\index{P6/TreeData.cpp@{P6/TreeData.cpp}}
+\mbox{\hyperlink{_tree_data_8cpp}{IdÅº do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tree_data_8h}{TreeData.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00010}00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00017}\mbox{\hyperlink{class_tree_data_ac6239c9a11fcf00626094015fe4bd099}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tree_data_ac6239c9a11fcf00626094015fe4bd099}{TreeData::addData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_row_data}{RowData}}\&\ rowData)\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\ Tworzenie\ strumienia\ z\ dat¹\ z\ obiektu\ RowData}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00019}00019\ \ \ \ \ stringstream\ ss(rowData.\mbox{\hyperlink{class_row_data_a557b67e0a3a797efae088b1033cd3170}{getDate}}());}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{string}\ token;}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00021}00021\ \ \ \ \ vector<int>\ dateParts;}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ Rozdzielenie\ daty\ na\ poszczególne\ czêœci\ (dzieñ, miesi¹c,\ rok)}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(ss,\ token,\ \textcolor{charliteral}{'.'}))\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ dateParts.push\_back(stoi(token));\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ Zmienne\ dla\ roku,\ miesi¹ca,\ dnia,\ godziny,\ minuty\ oraz\ kwarta³u}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{int}\ year\ =\ dateParts[2];\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{int}\ month\ =\ dateParts[1];\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{int}\ day\ =\ dateParts[0];\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{int}\ hour\ =\ stoi(rowData.\mbox{\hyperlink{class_row_data_a557b67e0a3a797efae088b1033cd3170}{getDate}}().substr(11,\ 2));\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{int}\ minute\ =\ stoi(rowData.\mbox{\hyperlink{class_row_data_a557b67e0a3a797efae088b1033cd3170}{getDate}}().substr(14,\ 2));\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{int}\ quarter\ =\ (hour\ *\ 60\ +\ minute)\ /\ 360;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ Przypisanie\ wartoœci\ do\ struktury\ drzewa\ na\ podstawie\ wyodrêbnionych\ danych}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{years}}[year].year\ =\ year;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{years}}[year].months[month].month\ =\ month;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{years}}[year].months[month].days[day].day\ =\ day;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{years}}[year].months[month].days[day].quarters[quarter].quarter\ =\ quarter;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{years}}[year].months[month].days[day].quarters[quarter].hour\ =\ hour;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{years}}[year].months[month].days[day].quarters[quarter].minute\ =\ minute;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{years}}[year].months[month].days[day].quarters[quarter].data.push\_back(rowData);\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00049}\mbox{\hyperlink{class_tree_data_a8ef9b84508f937c668c08a8bada8e169}{00049}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tree_data_a8ef9b84508f937c668c08a8bada8e169}{TreeData::print}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ Iterowanie\ po\ wszystkich\ latach\ w\ drzewie}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ yearPair\ :\ \mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{years}})\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree_data_1_1_year_node}{YearNode}}\&\ yearNode\ =\ yearPair.second;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Year:\ "{}}\ <<\ yearNode.\mbox{\hyperlink{struct_tree_data_1_1_year_node_ab5b087991a9243b8e4da3f141471453c}{year}}\ <<\ endl;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iterowanie\ po\ wszystkich\ miesi¹cach\ w\ danym\ roku}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ monthPair\ :\ yearNode.\mbox{\hyperlink{struct_tree_data_1_1_year_node_addf7aee60946340b38cea2d703d53596}{months}})\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree_data_1_1_month_node}{MonthNode}}\&\ monthNode\ =\ monthPair.second;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tMonth:\ "{}}\ <<\ monthNode.\mbox{\hyperlink{struct_tree_data_1_1_month_node_ad3de68542e77c64983a1f1965ef64611}{month}}\ <<\ endl;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iterowanie\ po\ dniach\ w\ danym\ miesi¹cu}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ dayPair\ :\ monthNode.\mbox{\hyperlink{struct_tree_data_1_1_month_node_affe544862f8b2f3beda81a8f364d0cc0}{days}})\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree_data_1_1_day_node}{DayNode}}\&\ dayNode\ =\ dayPair.second;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)tDay:\ "{}}\ <<\ dayNode.\mbox{\hyperlink{struct_tree_data_1_1_day_node_a04b5b96b96fc174adccc7e68bb829940}{day}}\ <<\ endl;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iterowanie\ po\ kwarta³ach\ w\ danym\ dniu}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ quarterPair\ :\ dayNode.\mbox{\hyperlink{struct_tree_data_1_1_day_node_a78e6c371c4e5df7b4b1ce20f29b17e28}{quarters}})\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree_data_1_1_quarter_node}{QuarterNode}}\&\ quarterNode\ =\ quarterPair.second;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)t\(\backslash\)tQuarter:\ "{}}\ <<\ quarterNode.\mbox{\hyperlink{struct_tree_data_1_1_quarter_node_ac339b88c6936439f91468ab428b685df}{quarter}}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ (Hour:\ "{}}\ <<\ quarterNode.\mbox{\hyperlink{struct_tree_data_1_1_quarter_node_ac3369f487aef182bfa23caa1a60810f8}{hour}}\ <<\ \textcolor{stringliteral}{"{},\ Minute:\ "{}}\ <<\ quarterNode.\mbox{\hyperlink{struct_tree_data_1_1_quarter_node_a520da3ab8f13a728aad79925ebe5cdc0}{minute}}\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ endl;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Wypisanie\ danych\ przypisanych\ do\ tego\ kwarta³u}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ rowData\ :\ quarterNode.\mbox{\hyperlink{struct_tree_data_1_1_quarter_node_a0ee7ddc938660f20b0ef81c4de9a0b41}{data}})\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rowData.displayData();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00079}00079\ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00087}\mbox{\hyperlink{class_tree_data_a138d9e60b0b966f62a1593cb13c3a967}{00087}}\ std::vector<RowData>\ \mbox{\hyperlink{class_tree_data_a138d9e60b0b966f62a1593cb13c3a967}{TreeData::getDataBetweenDates}}(\textcolor{keyword}{const}\ std::string\&\ startDate,\ \textcolor{keyword}{const}\ std::string\&\ endDate)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00088}00088\ \ \ \ \ std::vector<RowData>\ result;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{comment}{//\ Konwersja\ daty\ pocz¹tkowej\ na\ strukturê tm}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00091}00091\ \ \ \ \ std::tm\ tm\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00092}00092\ \ \ \ \ std::istringstream\ ss(startDate);}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00093}00093\ \ \ \ \ ss\ >>\ std::get\_time(\&tm,\ \textcolor{stringliteral}{"{}\%d.\%m.\%Y\ \%H:\%M"{}});\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00094}00094\ \ \ \ \ time\_t\ start\ =\ mktime(\&tm);\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//\ Konwersja\ daty\ koñcowej\ na\ strukturê tm}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00097}00097\ \ \ \ \ ss.clear();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00098}00098\ \ \ \ \ ss.str(endDate);\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00099}00099\ \ \ \ \ ss\ >>\ std::get\_time(\&tm,\ \textcolor{stringliteral}{"{}\%d.\%m.\%Y\ \%H:\%M"{}});\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00100}00100\ \ \ \ \ time\_t\ end\ =\ mktime(\&tm);\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{comment}{//\ Iterowanie\ po\ wszystkich\ latach\ w\ drzewie}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ yearPair\ :\ \mbox{\hyperlink{class_tree_data_a7e5cf70975a8de728ea70b7a071bc695}{years}})\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree_data_1_1_year_node}{YearNode}}\&\ yearNode\ =\ yearPair.second;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ monthPair\ :\ yearNode.\mbox{\hyperlink{struct_tree_data_1_1_year_node_addf7aee60946340b38cea2d703d53596}{months}})\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree_data_1_1_month_node}{MonthNode}}\&\ monthNode\ =\ monthPair.second;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ dayPair\ :\ monthNode.\mbox{\hyperlink{struct_tree_data_1_1_month_node_affe544862f8b2f3beda81a8f364d0cc0}{days}})\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree_data_1_1_day_node}{DayNode}}\&\ dayNode\ =\ dayPair.second;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ quarterPair\ :\ dayNode.\mbox{\hyperlink{struct_tree_data_1_1_day_node_a78e6c371c4e5df7b4b1ce20f29b17e28}{quarters}})\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree_data_1_1_quarter_node}{QuarterNode}}\&\ quarterNode\ =\ quarterPair.second;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ rowData\ :\ quarterNode.\mbox{\hyperlink{struct_tree_data_1_1_quarter_node_a0ee7ddc938660f20b0ef81c4de9a0b41}{data}})\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::tm\ tm\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ ss(rowData.getDate());}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ >>\ std::get\_time(\&tm,\ \textcolor{stringliteral}{"{}\%d.\%m.\%Y\ \%H:\%M"{}});\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ time\_t\ dataTime\ =\ mktime(\&tm);\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Porównanie\ czasu\ danych\ z\ przedzia³em\ czasowym}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dataTime\ >=\ start\ \&\&\ dataTime\ <=\ end)\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(rowData);\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{return}\ result;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00128}00128\ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00140}\mbox{\hyperlink{class_tree_data_a25ade5266d9186b0ef8dda8138122a73}{00140}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tree_data_a25ade5266d9186b0ef8dda8138122a73}{TreeData::calculateSumsBetweenDates}}(\textcolor{keyword}{const}\ std::string\&\ startDate,\ \textcolor{keyword}{const}\ std::string\&\ endDate,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordtype}{float}\&\ selfConsumptionSum,\ \textcolor{keywordtype}{float}\&\ exportSum,\ \textcolor{keywordtype}{float}\&\ importSum,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{keywordtype}{float}\&\ consumptionSum,\ \textcolor{keywordtype}{float}\&\ productionSum)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//\ Inicjalizacja\ sum\ na\ 0}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00144}00144\ \ \ \ \ selfConsumptionSum\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00145}00145\ \ \ \ \ exportSum\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00146}00146\ \ \ \ \ importSum\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00147}00147\ \ \ \ \ consumptionSum\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00148}00148\ \ \ \ \ productionSum\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//\ Pobranie\ danych\ w\ podanym\ przedziale\ czasowym}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00151}00151\ \ \ \ \ std::vector<RowData>\ data\ =\ \mbox{\hyperlink{class_tree_data_a138d9e60b0b966f62a1593cb13c3a967}{getDataBetweenDates}}(startDate,\ endDate);}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ rowData\ :\ data)\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ selfConsumptionSum\ +=\ rowData.getSelfConsumption();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ exportSum\ +=\ rowData.getExport();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ importSum\ +=\ rowData.getImport();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ consumptionSum\ +=\ rowData.getConsumption();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ productionSum\ +=\ rowData.getProduction();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00159}00159\ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00171}\mbox{\hyperlink{class_tree_data_a2cbc4518323971c7b73028dfd748e1df}{00171}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tree_data_a2cbc4518323971c7b73028dfd748e1df}{TreeData::calculateAveragesBetweenDates}}(\textcolor{keyword}{const}\ std::string\&\ startDate,\ \textcolor{keyword}{const}\ std::string\&\ endDate,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{keywordtype}{float}\&\ selfConsumptionAvg,\ \textcolor{keywordtype}{float}\&\ exportAvg,\ \textcolor{keywordtype}{float}\&\ importAvg,}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordtype}{float}\&\ consumptionAvg,\ \textcolor{keywordtype}{float}\&\ productionAvg)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{comment}{//\ Inicjalizacja\ zmiennych\ sumuj¹cych\ oraz\ liczby\ danych}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00175}00175\ \ \ \ \ \textcolor{keywordtype}{float}\ selfConsumptionSum\ =\ 0.0f,\ exportSum\ =\ 0.0f,\ importSum\ =\ 0.0f,\ consumptionSum\ =\ 0.0f,\ productionSum\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{comment}{//\ Pobranie\ danych\ w\ podanym\ przedziale\ czasowym}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00179}00179\ \ \ \ \ std::vector<RowData>\ data\ =\ \mbox{\hyperlink{class_tree_data_a138d9e60b0b966f62a1593cb13c3a967}{getDataBetweenDates}}(startDate,\ endDate);}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ rowData\ :\ data)\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ selfConsumptionSum\ +=\ rowData.getSelfConsumption();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ exportSum\ +=\ rowData.getExport();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ importSum\ +=\ rowData.getImport();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ consumptionSum\ +=\ rowData.getConsumption();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ productionSum\ +=\ rowData.getProduction();\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ count++;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{comment}{//\ Obliczanie\ œrednich,\ jeœli\ dane\ istniej¹}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00190}00190\ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ selfConsumptionAvg\ =\ selfConsumptionSum\ /\ count;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ exportAvg\ =\ exportSum\ /\ count;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ importAvg\ =\ importSum\ /\ count;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ consumptionAvg\ =\ consumptionSum\ /\ count;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ productionAvg\ =\ productionSum\ /\ count;\ \ }
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00196}00196\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_data_8cpp_source_l00197}00197\ \}}
+
+\end{DoxyCode}

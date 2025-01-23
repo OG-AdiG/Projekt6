@@ -1,0 +1,93 @@
+\doxysection{Dokumentacja struktury Tree\+Data\+::Quarter\+Node}
+\hypertarget{struct_tree_data_1_1_quarter_node}{}\label{struct_tree_data_1_1_quarter_node}\index{TreeData::QuarterNode@{TreeData::QuarterNode}}
+
+
+Reprezentuje dane z podzia³em na kwarta³y dnia. Struktura ta zawiera informacje o godzinie, minucie oraz dane przypisane do danego kwarta³u.  
+
+
+
+
+{\ttfamily \#include $<$Tree\+Data.\+h$>$}
+
+\doxysubsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_tree_data_1_1_quarter_node_ac339b88c6936439f91468ab428b685df}{quarter}}
+\begin{DoxyCompactList}\small\item\em Numer kwarta³u (0-\/3), np. 0 -\/ pierwsza czêœæ godziny, 1 -\/ druga czêœæ godziny itd. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_tree_data_1_1_quarter_node_ac3369f487aef182bfa23caa1a60810f8}{hour}}
+\begin{DoxyCompactList}\small\item\em Godzina rozpoczêcia kwarta³u (0-\/23). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_tree_data_1_1_quarter_node_a520da3ab8f13a728aad79925ebe5cdc0}{minute}}
+\begin{DoxyCompactList}\small\item\em Minuta rozpoczêcia kwarta³u (0-\/59). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_row_data}{Row\+Data}} $>$ \mbox{\hyperlink{struct_tree_data_1_1_quarter_node_a0ee7ddc938660f20b0ef81c4de9a0b41}{data}}
+\begin{DoxyCompactList}\small\item\em Dane przypisane do kwarta³u, przechowywane jako wektor obiektów \doxylink{class_row_data}{Row\+Data}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+Reprezentuje dane z podzia³em na kwarta³y dnia. Struktura ta zawiera informacje o godzinie, minucie oraz dane przypisane do danego kwarta³u. 
+
+Definicja w linii \mbox{\hyperlink{_tree_data_8h_source_l00021}{21}} pliku \mbox{\hyperlink{_tree_data_8h_source}{Tree\+Data.\+h}}.
+
+
+
+\doxysubsection{Dokumentacja atrybutÃ³w skÅ‚adowych}
+\Hypertarget{struct_tree_data_1_1_quarter_node_a0ee7ddc938660f20b0ef81c4de9a0b41}\index{TreeData::QuarterNode@{TreeData::QuarterNode}!data@{data}}
+\index{data@{data}!TreeData::QuarterNode@{TreeData::QuarterNode}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{struct_tree_data_1_1_quarter_node_a0ee7ddc938660f20b0ef81c4de9a0b41} 
+std\+::vector$<$\mbox{\hyperlink{class_row_data}{Row\+Data}}$>$ Tree\+Data\+::\+Quarter\+Node\+::data}
+
+
+
+Dane przypisane do kwarta³u, przechowywane jako wektor obiektów \doxylink{class_row_data}{Row\+Data}. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_tree_data_8h_source_l00025}{25}} pliku \mbox{\hyperlink{_tree_data_8h_source}{Tree\+Data.\+h}}.
+
+\Hypertarget{struct_tree_data_1_1_quarter_node_ac3369f487aef182bfa23caa1a60810f8}\index{TreeData::QuarterNode@{TreeData::QuarterNode}!hour@{hour}}
+\index{hour@{hour}!TreeData::QuarterNode@{TreeData::QuarterNode}}
+\doxysubsubsection{\texorpdfstring{hour}{hour}}
+{\footnotesize\ttfamily \label{struct_tree_data_1_1_quarter_node_ac3369f487aef182bfa23caa1a60810f8} 
+int Tree\+Data\+::\+Quarter\+Node\+::hour}
+
+
+
+Godzina rozpoczêcia kwarta³u (0-\/23). 
+
+
+
+Definicja w linii \mbox{\hyperlink{_tree_data_8h_source_l00023}{23}} pliku \mbox{\hyperlink{_tree_data_8h_source}{Tree\+Data.\+h}}.
+
+\Hypertarget{struct_tree_data_1_1_quarter_node_a520da3ab8f13a728aad79925ebe5cdc0}\index{TreeData::QuarterNode@{TreeData::QuarterNode}!minute@{minute}}
+\index{minute@{minute}!TreeData::QuarterNode@{TreeData::QuarterNode}}
+\doxysubsubsection{\texorpdfstring{minute}{minute}}
+{\footnotesize\ttfamily \label{struct_tree_data_1_1_quarter_node_a520da3ab8f13a728aad79925ebe5cdc0} 
+int Tree\+Data\+::\+Quarter\+Node\+::minute}
+
+
+
+Minuta rozpoczêcia kwarta³u (0-\/59). 
+
+
+
+Definicja w linii \mbox{\hyperlink{_tree_data_8h_source_l00024}{24}} pliku \mbox{\hyperlink{_tree_data_8h_source}{Tree\+Data.\+h}}.
+
+\Hypertarget{struct_tree_data_1_1_quarter_node_ac339b88c6936439f91468ab428b685df}\index{TreeData::QuarterNode@{TreeData::QuarterNode}!quarter@{quarter}}
+\index{quarter@{quarter}!TreeData::QuarterNode@{TreeData::QuarterNode}}
+\doxysubsubsection{\texorpdfstring{quarter}{quarter}}
+{\footnotesize\ttfamily \label{struct_tree_data_1_1_quarter_node_ac339b88c6936439f91468ab428b685df} 
+int Tree\+Data\+::\+Quarter\+Node\+::quarter}
+
+
+
+Numer kwarta³u (0-\/3), np. 0 -\/ pierwsza czêœæ godziny, 1 -\/ druga czêœæ godziny itd. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_tree_data_8h_source_l00022}{22}} pliku \mbox{\hyperlink{_tree_data_8h_source}{Tree\+Data.\+h}}.
+
+
+
+Dokumentacja dla tej struktury zostaÅ‚a wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+P6/\mbox{\hyperlink{_tree_data_8h}{Tree\+Data.\+h}}\end{DoxyCompactItemize}

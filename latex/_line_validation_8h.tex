@@ -1,0 +1,60 @@
+\doxysection{Dokumentacja pliku P6/\+Line\+Validation.h}
+\hypertarget{_line_validation_8h}{}\label{_line_validation_8h}\index{P6/LineValidation.h@{P6/LineValidation.h}}
+
+
+Zawiera funkcjê waliduj¹c¹ wiersze z pliku CSV.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include "{}Log\+Manager.\+h"{}}\newline
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_line_validation_8h_af0848a17a462789065f4325be805a003}{line\+Validation}} (const std\+::string \&line)
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Za³¹czenie pliku nag³ówkowego do obs³ugi logowania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+Zawiera funkcjê waliduj¹c¹ wiersze z pliku CSV. 
+
+
+
+Definicja w pliku \mbox{\hyperlink{_line_validation_8h_source}{Line\+Validation.\+h}}.
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{_line_validation_8h_af0848a17a462789065f4325be805a003}\index{LineValidation.h@{LineValidation.h}!lineValidation@{lineValidation}}
+\index{lineValidation@{lineValidation}!LineValidation.h@{LineValidation.h}}
+\doxysubsubsection{\texorpdfstring{lineValidation()}{lineValidation()}}
+{\footnotesize\ttfamily \label{_line_validation_8h_af0848a17a462789065f4325be805a003} 
+bool line\+Validation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{line}{}\end{DoxyParamCaption})}
+
+
+
+\texorpdfstring{$<$}{<} Za³¹czenie pliku nag³ówkowego do obs³ugi logowania. 
+
+Funkcja sprawdzaj¹ca poprawnoœæ wiersza danych.
+
+Sprawdza, czy wiersz zawiera odpowiedni¹ liczbê parametrów, czy nie jest pusty i czy nie zawiera liter. 
+\begin{DoxyParams}{Parametry}
+{\em line} & Wiersz danych wejœciowych. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+true, jeœli wiersz jest poprawny, false w przeciwnym razie. Funkcja ta waliduje wiersz CSV poprzez sprawdzenie jego zawartoœci, takich jak liczba parametrów oraz obecnoœæ niepo¿¹danych liter. 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Logowanie b³êdu, gdy linia jest pusta.
+
+\texorpdfstring{$<$}{<} Logowanie b³êdu, gdy wiersz zawiera nag³ówek.
+
+\texorpdfstring{$<$}{<} Logowanie b³êdu, gdy wiersz zawiera litery.
+
+\texorpdfstring{$<$}{<} Logowanie b³êdu, gdy liczba parametrów jest niepoprawna.
+
+\texorpdfstring{$<$}{<} Zwracanie true, jeœli wiersz jest poprawny.
+
+Definicja w linii \mbox{\hyperlink{_line_validation_8h_source_l00017}{17}} pliku \mbox{\hyperlink{_line_validation_8h_source}{Line\+Validation.\+h}}.
+
