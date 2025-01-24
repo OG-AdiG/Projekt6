@@ -1,0 +1,1 @@
+Kompilator działa (good ending)
