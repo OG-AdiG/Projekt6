@@ -1,5 +1,5 @@
 /// \file LineValidation.h
-/// \brief Zawiera funkcjê waliduj¹c¹ wiersze z pliku CSV.
+/// \brief Zawiera funkcjÄ™ walidujÄ…cÄ… wiersze z pliku CSV.
 
 #ifndef LINEVALIDATION_H
 #define LINEVALIDATION_H
@@ -7,42 +7,42 @@
 #include <string>
 #include <cctype>
 #include <algorithm>
-#include "LogManager.h" ///< Za³¹czenie pliku nag³ówkowego do obs³ugi logowania.
+#include "LogManager.h" ///< ZaÅ‚Ä…czenie pliku nagÅ‚Ã³wkowego do obsÅ‚ugi logÃ³w
 
-/// \brief Funkcja sprawdzaj¹ca poprawnoœæ wiersza danych.
-/// \details Sprawdza, czy wiersz zawiera odpowiedni¹ liczbê parametrów, czy nie jest pusty i czy nie zawiera liter.
-/// \param line Wiersz danych wejœciowych.
-/// \return true, jeœli wiersz jest poprawny, false w przeciwnym razie.
-/// Funkcja ta waliduje wiersz CSV poprzez sprawdzenie jego zawartoœci, takich jak liczba parametrów oraz obecnoœæ niepo¿¹danych liter.
+/// \brief Funkcja sprawdzajÄ…ca poprawnoÅ›Ä‡ wiersza danych.
+/// \details Sprawdza, czy wiersz zawiera odpowiedniÄ… liczbÄ™ parametrÃ³w, czy nie jest pusty i czy nie zawiera liter.
+/// \param line Wiersz danych wejÅ›ciowych.
+/// \return true, jeÅ›li wiersz jest poprawny, false w przeciwnym razie.
+/// Funkcja ta waliduje wiersz CSV poprzez sprawdzenie jego zawartoÅ›ci, takich jak liczba parametrÃ³w oraz obecnoÅ›Ä‡ niepoÅ¼Ä…danych liter.
 bool lineValidation(const std::string& line)
 {
     // Sprawdzenie, czy wiersz jest pusty.
     if (line.empty())
     {
-        errorLogger.log("Pusta linia"); ///< Logowanie b³êdu, gdy linia jest pusta.
+        errorLogger.log("Pusta linia"); ///< Logowanie bÅ‚Ä™du, gdy linia jest pusta.
         return false;
     }
-    // Sprawdzenie, czy wiersz zawiera nag³ówek.
+    // Sprawdzenie, czy wiersz zawiera nagÅ‚Ã³wek.
     else if (line.find("Time") != std::string::npos)
     {
-        errorLogger.log("Znaleziono nag³ówek: " + line); ///< Logowanie b³êdu, gdy wiersz zawiera nag³ówek.
+        errorLogger.log("Znaleziono nagÅ‚Ã³wek: " + line); ///< Logowanie bÅ‚Ä™du, gdy wiersz zawiera nagÅ‚Ã³wek.
         return false;
     }
     // Sprawdzenie, czy wiersz zawiera litery.
     else if (std::any_of(line.begin(), line.end(), [](char c) { return std::isalpha(c); }))
     {
-        errorLogger.log("Znaleziono inne dane: " + line); ///< Logowanie b³êdu, gdy wiersz zawiera litery.
+        errorLogger.log("Znaleziono inne dane: " + line); ///< Logowanie bÅ‚Ä™du, gdy wiersz zawiera litery.
         return false;
     }
-    // Sprawdzenie, czy wiersz zawiera odpowiedni¹ liczbê parametrów (5 przecinków).
+    // Sprawdzenie, czy wiersz zawiera odpowiedniÄ… liczbÄ™ parametrÃ³w (5 przecinkÃ³w).
     else if (std::count(line.begin(), line.end(), ',') != 5)
     {
-        errorLogger.log("Nieprawid³owa liczba parametrów: " + line); ///< Logowanie b³êdu, gdy liczba parametrów jest niepoprawna.
+        errorLogger.log("NieprawidÅ‚owa liczba parametrÃ³w: " + line); ///< Logowanie bÅ‚Ä™du, gdy liczba parametrÃ³w jest niepoprawna.
         return false;
     }
     else
     {
-        return true; ///< Zwracanie true, jeœli wiersz jest poprawny.
+        return true; ///< Zwracanie true, jeÅ›li wiersz jest poprawny.
     }
 }
 
